@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { COLORS } from "./styles/global";
+import NavBar from "./src/navBar/navBar";
+import AddButton from "./src/floatingBTN";
+import ContainerBoxs from "./src/main";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={s.container}>
+      <NavBar />
+      <ContainerBoxs />
+      <AddButton />
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
+const s = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: COLORS.background,
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  text: {
+    color: COLORS.color,
   },
 });
